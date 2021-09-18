@@ -28,7 +28,7 @@ async function promptForMissingOptions(options) {
     questions.push({
       type: "confirm",
       name: "git",
-      message: "Initialize a git repository?",
+      message: "Should a git be initialized??",
       default: false
     });
   }
@@ -36,7 +36,7 @@ async function promptForMissingOptions(options) {
   questions.push({
     type: "list",
     name: "packageManager",
-    message: "Please select package manager",
+    message: "Select your package manager",
     choices: ["yarn", "npm"],
     default: defaultPackage
   });
@@ -57,8 +57,7 @@ function parseArgumentsIntoOptions(rawArgs) {
       "--yes": Boolean,
       "--install": Boolean,
       "-g": "--git",
-      "-y": "--yes",
-      "-i": "--install"
+      "-y": "--yes"
     },
     {
       argv: rawArgs.slice(2)
