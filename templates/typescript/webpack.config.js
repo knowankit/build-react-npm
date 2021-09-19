@@ -5,21 +5,22 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = env => {
   const config = {
-    mode: "development",
-    devtool: "inline-source-map",
+    mode: env.development ? "development" : "production",
+    // devtool: "inline-source-map",
     entry: {
-      main: path.resolve(__dirname, "./src/index.tsx")
+      main: env.development
+        ? `${path.resolve(__dirname, "./src/index.tsx")}`
+        : `${path.resolve(__dirname, "./src/example-component.tsx")}`
     },
     devServer: {
       port: 3000,
-      watchContentBase: true,
-      historyApiFallback: true
+      watchContentBase: true
     },
     module: {
       rules: [
         {
           test: /\.(ts|tsx)$/,
-          exclude: /node_modules/,
+          exclude: /(node_modules|build|dist)/,
           use: ["ts-loader"]
         },
         {
@@ -34,15 +35,19 @@ module.exports = env => {
     },
     output: {
       path: path.resolve(__dirname, "./dist"),
-      filename: "[name].bundle.js"
+      filename: "index.js",
+      libraryTarget: "commonjs2"
     },
     resolve: {
       extensions: [".tsx", ".ts", ".js"]
     },
-    plugins: [new CleanWebpackPlugin()]
+    plugins: [new CleanWebpackPlugin()],
+    externals: {
+      react: "commonjs react"
+    }
   };
 
-  if (env.developement) {
+  if (env.development) {
     config.plugins.push(
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, "./public/index.html"),
