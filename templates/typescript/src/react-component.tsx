@@ -1,7 +1,12 @@
 import React from "react";
+import "./index.css";
 
-const ReactComponent = () => {
-  return <h1>React component</h1>;
+type IProps = {
+  text: string;
+};
+
+const ReactComponent = ({ text }: IProps) => {
+  return <h1>{text}</h1>;
 };
 
 export default ReactComponent;

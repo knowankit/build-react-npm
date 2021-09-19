@@ -5,15 +5,16 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = env => {
   const config = {
-    mode: "development",
+    mode: env.development ? "development" : "production",
     devtool: "inline-source-map",
     entry: {
-      main: path.resolve(__dirname, "./src/index.tsx")
+      main: env.development
+        ? `${path.resolve(__dirname, "./src/index.tsx")}`
+        : `${path.resolve(__dirname, "./src/react-component.tsx")}`
     },
     devServer: {
       port: 3000,
-      watchContentBase: true,
-      historyApiFallback: true
+      watchContentBase: true
     },
     module: {
       rules: [
@@ -34,7 +35,7 @@ module.exports = env => {
     },
     output: {
       path: path.resolve(__dirname, "./dist"),
-      filename: "[name].bundle.js"
+      filename: "index.js"
     },
     resolve: {
       extensions: [".tsx", ".ts", ".js"]
@@ -42,7 +43,7 @@ module.exports = env => {
     plugins: [new CleanWebpackPlugin()]
   };
 
-  if (env.developement) {
+  if (env.development) {
     config.plugins.push(
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, "./public/index.html"),
