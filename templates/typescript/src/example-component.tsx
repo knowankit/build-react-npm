@@ -5,8 +5,8 @@ type IProps = {
   text: string;
 };
 
-const ReactComponent = ({ text }: IProps) => {
+const ExampleComponent = ({ text }: IProps) => {
   return <h1>{text}</h1>;
 };
 
-export default ReactComponent;
+export default ExampleComponent;

@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDom from "react-dom";
-import ReactComponent from "./react-component";
+import ExampleComponent from "./example-component";
 
 ReactDom.render(
-  <ReactComponent text="hello" />,
+  <ExampleComponent text="hello" />,
   document.getElementById("app")
 );
