@@ -3,7 +3,7 @@ import ExampleComponent from "example-component";
 import "example-component/dist/index.css";
 
 function App() {
-  return <ExampleComponent text="hello I am" />;
+  return <ExampleComponent text="Hello World!" />;
 }
 
 export default App;
