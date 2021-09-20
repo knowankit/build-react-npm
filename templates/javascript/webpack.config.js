@@ -13,7 +13,10 @@ module.exports = env => {
       : `${path.resolve(__dirname, "./src/example-component.js")}`,
     devServer: {
       port: 3000,
-      watchContentBase: true
+      watchContentBase: true,
+      hot: true,
+      open: true,
+      historyApiFallback: true
     },
     module: {
       rules: [

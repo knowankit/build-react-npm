@@ -3,6 +3,6 @@ import ReactDom from "react-dom";
 import ExampleComponent from "./example-component";
 
 ReactDom.render(
-  <ExampleComponent text="hello" />,
+  <ExampleComponent text="Hello World!" />,
   document.getElementById("app")
 );
