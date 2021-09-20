@@ -20,7 +20,7 @@ module.exports = env => {
       rules: [
         {
           test: /\.(ts|tsx)$/,
-          exclude: /(node_modules|build|dist)/,
+          exclude: /(node_modules)/,
           use: ["ts-loader"]
         },
         {
