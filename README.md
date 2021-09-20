@@ -19,8 +19,6 @@
 
 ## Install globally
 
-This package requires `node >= 12`.
-
 ```bash
 npm install -g build-react-npm
 ```
