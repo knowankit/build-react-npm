@@ -1,5 +1,5 @@
 {
-  "name": "@knowankit/init-react-library",
+  "name": "@knowankit/build-react-npm",
   "version": "0.0.1",
   "description": "Create your react npm library",
   "main": "src/index.js",
@@ -7,26 +7,26 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "@knowankit/init-react-library": "bin/init-react-library",
-    "init-react-library": "bin/init-react-library"
+    "@knowankit/build-react-npm": "bin/build-react-npm",
+    "build-react-npm": "bin/build-react-npm"
   },
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/knowankit/init-react-library.git"
+    "url": "git+https://github.com/knowankit/build-react-npm.git"
   },
   "keywords": [
     "cli",
-    "init-react-library"
+    "build-react-npm"
   ],
   "author": "Ankit Kumar",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/knowankit/init-react-library/issues"
+    "url": "https://github.com/knowankit/build-react-npm/issues"
   },
-  "homepage": "https://github.com/knowankit/init-react-library#readme",
+  "homepage": "https://github.com/knowankit/build-react-npmy#readme",
   "dependencies": {
     "arg": "^5.0.1",
     "chalk": "^4.1.2",

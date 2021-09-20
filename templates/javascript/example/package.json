@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "private": true,
+  "private": false,
   "homepage": ".",
   "version": "0.0.0",
   "dependencies": {
@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm i && react-scripts build"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
