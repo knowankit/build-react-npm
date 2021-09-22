@@ -80,9 +80,9 @@ or
 npm run build
 ```
 
-This will build the file and also pack you npm package in the format of `tz`. You can see a new file has been created with the name of your package at the root level. Something like `[name-of-package-version-number].tz` This file will be used in our example dir where we will be testing.
+This will build the file and also pack you npm package in the format of `tgz`. You can see a new file has been created with the name of your package at the root level. Something like `[name-of-package-version-number].tgz` This file will be used in our example dir where we will be testing.
 
-Go to the example directory and check the `package.json`, you will see your package name in the dependency. You need to change it as per your package name or just rename whatever it is in the `[name-of-package-version-number].tz` filename.
+Go to the example directory and check the `package.json`, you will see your package name in the dependency. You need to change it as per your package name or just rename whatever it is in the `[name-of-package-version-number].tgz` filename.
 
 ```bash
 npm install
