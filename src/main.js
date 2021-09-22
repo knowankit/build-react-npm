@@ -93,7 +93,7 @@ export async function createProject(options) {
         enabled: () => options.git
       },
       {
-        title: `Install ${options["packageManager"]} dependencies`,
+        title: `Installing ${options["packageManager"]} dependencies`,
         task: () =>
           projectInstall({
             cwd: options.targetDirectory,
@@ -107,7 +107,7 @@ export async function createProject(options) {
   );
 
   await tasks.run();
-  console.log("%s File creation is compleled", chalk.green.bold("DONE"));
+  console.log("%s File creation is completed", chalk.green.bold("DONE"));
 
   const successMessage = "🚀 Your project is ready";
   if (options.packageManager === "npm") {
