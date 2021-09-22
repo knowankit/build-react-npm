@@ -93,7 +93,7 @@ export async function createProject(options) {
         enabled: () => options.git
       },
       {
-        title: `Installing ${options["packageManager"]} dependencies`,
+        title: `Installing ${options["packageManager"]} dependencies (This may take a while)`,
         task: () =>
           projectInstall({
             cwd: options.targetDirectory,
