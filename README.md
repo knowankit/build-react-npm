@@ -1,6 +1,6 @@
 # 📦 build-react-npm
 
-> CLI for creating reusable, modern React libraries using Webpack and create-react-app.
+> CLI for creating reusable, modern React libraries using **Webpack** and **create-react-app**.
 
 ## Intro
 
@@ -16,29 +16,25 @@
 ## Features 🚀
 
 - A modern and easy to use CLI
+- Rapid development of the component
 - Generates modern JS feature files
-- Bundles `commonjs` and `es` module formats
 - [create-react-app](https://github.com/facebookincubator/create-react-app) for example usage and local dev
 - [Webpack](https://webpack.js.org/) for bundling
 - [Babel](https://babeljs.io/) for transpiling
-- Supports complicated peer-dependencies
 - Optional support for TypeScript
 - Sourcemap creation
 - Publish github pages with one command
 - Easy to build and test your component with the example template
 
+## How is it different from the other library CLI?
+
+- It is using latest version of webpack. Currently, other CLI's are using rollup.
+- Development is fast here because we are not directly consuming the component. First we are building it peacefully, and once it is ready then we do `npm pack` to test in our local environment
+
 ## Install globally
 
 ```bash
 npm install -g build-react-npm
-```
-
-## How to use it?
-
-### Development
-
-```bash
-build-react-npm
 ```
 
 or
@@ -47,9 +43,16 @@ or
 npx build-react-npm
 ```
 
-Once you run the CLI, you will be asked to answer few options. Complete the steps and you should have react project with the similar directory strucutre.
+## Development
 
-If you are using npm
+```bash
+build-react-npm
+```
+
+Once you run the CLI, you will be asked to answer few questions. Complete the steps and you should have a react project with an example component.
+
+If you are using `npm`
+
 ```bash
 npm run dev
 ```
@@ -60,11 +63,11 @@ else
 yarn dev
 ```
 
-You will have a example component running in the browser. You can start developing your component here by adding some javscripts and css.
+You will have a example component running in the browser. You can start developing your component here by adding some Javscript and CSS.
 
-### Test
+## Test
 
-Looks like you have build your awesome react component. Now, we need to test it as an individual component by importing it.To do this first we need to build our component.
+Looks like you have build your awesome react component. Now, we need to test it as an individual component by importing it. To do this first we need to build our component.
 
 To build the component run
 
@@ -77,9 +80,9 @@ or
 npm run build
 ```
 
-This will build the file and also pack you npm package in the format of tz. You can see a new file has been created with the name of your package at the root level. Something like [name-of-package-version-number].tz This file will be used in our example dir where we will be testing.
+This will build the file and also pack you npm package in the format of `tz`. You can see a new file has been created with the name of your package at the root level. Something like `[name-of-package-version-number].tz` This file will be used in our example dir where we will be testing.
 
-Go to the example directory and check the package.json, you will see you package name in the dependency. You need to change it as per your package name or just rename whatever is in [name-of-package-version-number].tz filename.
+Go to the example directory and check the `package.json`, you will see your package name in the dependency. You need to change it as per your package name or just rename whatever it is in the `[name-of-package-version-number].tz` filename.
 
 ```bash
 npm install
@@ -88,7 +91,7 @@ npm install
 This will install your package and you can test it in in your local project before publishing.
 
 
-### Publish
+## Publish
 
 Once you have tested your component, you can go the root directory and run
 
