@@ -1,5 +1,5 @@
 {
-  "name": "@knowankit/build-react-npm",
+  "name": "build-react-npm",
   "version": "0.0.1",
   "description": "Create your react npm library and publish it in no time",
   "main": "src/index.js",
@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "@knowankit/build-react-npm": "bin/build-react-npm",
     "build-react-npm": "bin/build-react-npm"
   },
   "publishConfig": {
