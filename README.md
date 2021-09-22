@@ -2,6 +2,13 @@
 
 > CLI for creating reusable, modern React libraries using Webpack and create-react-app.
 
+![Trello clone](https://github.com/knowankit/built-react-npm/blob/develop/demo.gif)
+<p align="center">
+  <a href="https://twitter.com/knowankit">
+    <img alt="Twitter: Ankit Kumar" src="https://img.shields.io/twitter/follow/knowankit.svg?style=social" target="_blank" />
+  </a>
+</p>
+
 ## Features 🚀
 
 - A modern and easy to use CLI
@@ -26,7 +33,17 @@ npm install -g build-react-npm
 
 ### Development
 
-Once you run the CLI, you will be asked for few options. Complete the steps and you should have react project with the similar directory strucutre.
+```bash
+build-react-npm
+```
+
+or
+
+```bash
+npx build-react-npm
+```
+
+Once you run the CLI, you will be asked to answer few options. Complete the steps and you should have react project with the similar directory strucutre.
 
 If you are using npm
 ```bash
@@ -63,7 +80,7 @@ Go to the example directory and check the package.json, you will see you package
 npm install
 ```
 
-This will install your package and you can test it.
+This will install your package and you can test it in in your local project before publishing.
 
 
 ### Publish
@@ -74,7 +91,7 @@ Once you have tested your component, you can go the root directory and run
 npm publish
 ```
 
-If you want to created the demo page as well using the git hub page then you can style your example directory and run
+If you want to create the demo page as well using the git hub page then you can style your example directory and run
 
 ```bash
 npm run deploy
