@@ -74,7 +74,7 @@ To build the component run
 ```bash
 yarn build
 ```
-or 
+or
 
 ```bash
 npm run build
@@ -105,6 +105,11 @@ If you want to create the demo page as well using the git hub page then you can 
 npm run deploy
 ```
 
+Congratlations 🎉, you have published your package
+
+<p align="center">
+  <img width="200" src="https://github.com/knowankit/build-react-npm/blob/develop/success.gif">
+</p>
 ## License
 
 MIT © [Ankit Kumar](https://github.com/knowankit)
