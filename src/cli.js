@@ -18,7 +18,7 @@ async function promptForMissingOptions(options) {
     questions.push({
       type: "list",
       name: "template",
-      message: "Please choose which project template to use",
+      message: "Select a project template",
       choices: ["JavaScript", "TypeScript"],
       default: defaultTemplate
     });
@@ -28,7 +28,7 @@ async function promptForMissingOptions(options) {
     questions.push({
       type: "confirm",
       name: "git",
-      message: "Should a git be initialized??",
+      message: "Do you want a git to be initialised?",
       default: false
     });
   }
@@ -36,7 +36,7 @@ async function promptForMissingOptions(options) {
   questions.push({
     type: "list",
     name: "packageManager",
-    message: "Select your package manager",
+    message: "Select a package manager",
     choices: ["yarn", "npm"],
     default: defaultPackage
   });

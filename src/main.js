@@ -8,6 +8,7 @@ import path from "path";
 import { projectInstall } from "pkg-install";
 import license from "spdx-license-list/licenses/MIT";
 import { promisify } from "util";
+import boxen from "boxen";
 
 const access = promisify(fs.access);
 const writeFile = promisify(fs.writeFile);
@@ -75,19 +76,19 @@ export async function createProject(options) {
   const tasks = new Listr(
     [
       {
-        title: "Copy project files",
+        title: "Creating project files",
         task: () => copyTemplateFiles(options)
       },
       {
-        title: "Create gitignore",
+        title: "Creating gitignore",
         task: () => createGitignore(options)
       },
       {
-        title: "Create License",
+        title: "Creating License",
         task: () => createLicense(options)
       },
       {
-        title: "Initialize git",
+        title: "Initializing git",
         task: () => initGit(options),
         enabled: () => options.git
       },
@@ -106,6 +107,23 @@ export async function createProject(options) {
   );
 
   await tasks.run();
-  console.log("%s Project ready", chalk.green.bold("DONE"));
+  console.log("%s File creation is compleled", chalk.green.bold("DONE"));
+
+  const successMessage = "🚀 Your project is ready";
+  if (options.packageManager === "npm") {
+    console.log(
+      boxen("`npm run dev' to start building your component", {
+        padding: 1,
+        title: successMessage
+      })
+    );
+  } else {
+    console.log(
+      boxen("`yarn dev' to start building your component", {
+        padding: 1,
+        title: successMessage
+      })
+    );
+  }
   return true;
 }
