@@ -12,7 +12,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm i && react-scripts build"
+    "build": "npm i && react-scripts build",
+    "clean": "rm -rf node_modules"
   },
   "eslintConfig": {
     "extends": [
