@@ -111,6 +111,10 @@ Congratlations 🎉, you have published your package
   <img width="200" src="https://github.com/knowankit/build-react-npm/blob/develop/success.gif">
 </p>
 
+## Libraries bootstrapped from this CLI - build-react-npm
+
+* [React bubble effect button](https://github.com/knowankit/react-bubbly-effect-button)
+
 ## License
 
 MIT © [Ankit Kumar](https://github.com/knowankit)
