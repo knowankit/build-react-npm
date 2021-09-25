@@ -1,8 +1,5 @@
-import React from "react";
-import ReactDom from "react-dom";
-import ExampleComponent from "./example-component";
+import React from 'react';
+import ReactDom from 'react-dom';
+import ExampleComponent from './example-component';
 
-ReactDom.render(
-  <ExampleComponent text="Hello World!" />,
-  document.getElementById("app")
-);
+ReactDom.render(<ExampleComponent text="Hello World!" />, document.getElementById('app'));
