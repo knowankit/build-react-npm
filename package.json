@@ -1,6 +1,6 @@
 {
   "name": "build-react-npm",
-  "version": "0.3.0",
+  "version": "0.3.3",
   "description": "Create your react npm library and publish it in no time",
   "main": "src/index.js",
   "scripts": {
