@@ -114,6 +114,7 @@ Congratlations 🎉, you have published your package
 ## Libraries bootstrapped from this CLI - build-react-npm
 
 * [React bubble effect button](https://github.com/knowankit/react-bubbly-effect-button)
+* [Particle effect on text](https://github.com/knowankit/particle-text-effect)
 
 ## License
 
