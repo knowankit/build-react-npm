@@ -3,9 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = (env) => {
+module.exports = env => {
   const config = {
     mode: env.development ? 'development' : 'production',
+    devtool: 'inline-source-map',
     entry: {
       main: env.development
         ? `${path.resolve(__dirname, './src/index.tsx')}`
@@ -43,7 +44,21 @@ module.exports = (env) => {
     resolve: {
       extensions: ['.tsx', '.ts', '.js']
     },
-    plugins: [new CleanWebpackPlugin()]
+    plugins: [new CleanWebpackPlugin()],
+    externals: {
+      react: {
+        root: 'React',
+        commonjs2: 'react',
+        commonjs: 'react',
+        amd: 'react'
+      },
+      'react-dom': {
+        root: 'ReactDOM',
+        commonjs2: 'react-dom',
+        commonjs: 'react-dom',
+        amd: 'react-dom'
+      }
+    }
   };
 
   if (env.development) {
