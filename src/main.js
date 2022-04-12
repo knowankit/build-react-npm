@@ -59,17 +59,29 @@ export async function createProject(options) {
   };
 
   const fullPathName = new URL(import.meta.url).pathname;
+  const osPath = fullPathName.substr(fullPathName.indexOf("/"));
+  const winPath = fullPathName.substr(fullPathName.indexOf("\\"));
+  if (
+    process.platform !== "win32" &&
+    process.platform !== "linux" &&
+    process.platform !== "darwin"
+  ) {
+    console.error("%s Build React NPM must be in win, linux, or darwin system", chalk.red.bold("ERROR"));
+    return;
+  }
   const templateDir = path.resolve(
-    fullPathName.substr(fullPathName.indexOf("/")),
-    "../../templates",
+    process.platform === "win32" ? winPath
+      : (process.platform === "linux" || process.platform === "darwin") ?
+        osPath : null,
+    "../../../templates",
     options.template.toLowerCase()
   );
   options.templateDirectory = templateDir;
 
   try {
-    await access(templateDir, fs.constants.R_OK);
+    await access(templateDir);
   } catch (err) {
-    console.error("%s Invalid template name", chalk.red.bold("ERROR"));
+    console.error("%s %s", chalk.red.bold("ERROR"), err);
     process.exit(1);
   }
 
